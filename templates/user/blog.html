@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<select>
+    <option value="">select</option>
+    {% for i in data %}
+    <option>{{i.Name}}</option>
+    {% endfor %}
+</select>
+
+{% endblock %}

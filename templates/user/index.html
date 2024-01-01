@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    #btn{height: 40px;width: 150px;border-radius: 20px;background: aqua;text-align: center;line-height: 40px;margin:0 auto;margin-top: 30px;cursor:pointer;}
+    .rimg
+    {
+        background: url("{% static 'images/hero-2.jpg'%}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 30px;
+    }
+    .f
+    {
+        min-height: 500px;
+        background: rgba(256,256,256,.3);
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px 2px gray ;
+        color:white;
+    }
+    .pt1
+    {
+        height: 50px;
+        border-radius: 25px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 40px;
+        box-sizing: border-box;
+        outline:none;
+        font-size: 20px;
+    }
+    b:hover
+    {
+        color:white;
+        text-decoration: underline;
+    }
+    .btn1
+	{
+		height:52px;
+		border-bottom:10px solid aqua;
+		border-radius:24px;
+        box-sizing: border-box;
+	}
+    .btn1:hover
+    {
+        border-bottom:10px solid #2e2e2e;
+        transition:all ease-in .3s;
+    }
+	.btn2
+	{
+	      height:44px;
+          font-size: 20px;
+          padding-bottom: 2px;
+          color: black;
+          font-weight: bold;
+          border: 3px solid aqua;
+          background: white;
+	}
+	.btn2:hover
+	{
+		background:#ff8800;
+		color:white;
+		font-size:18px;
+        border: 3px solid #2e2e2e;
+		transition:all ease-in .3s;
+	}
+    .gallery1{
+        background: #b9c6b1;
+    }
+    .gallery{
+        min-height: 400px;
+    }
+    #Imgb{
+        border-radius: 10px;border: 10px groove yellowgreen;border-bottom-left-radius: 80px;border-top-right-radius: 80px;
+    }
+    .Imgs{
+        border-bottom-left-radius: 40px;border: 10px groove yellowgreen;border-top-right-radius: 40px;
+    }
+    .map{
+        min-height: 200px;background: black;border: 3px solid white;background: transparent;
+    }
+</style>
+<div class="row pb-3">
+    <div class="col-sm-6">   
+        <div style="font-size: 40px; text-align: center;padding-top: 200px;box-sizing: border-box;color: white;font-weight: bold;">Mate-Free Parallax Website Template
+        </div>
+                <p style="text-align: center;color:white;font-size: 18px;">Lorem ipsum dolor sit amet, consectecure adipiscing elit.</p>
+                <div id="btn">DOWNLOAD</div>
+    </div> 
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;color:white">LOGIN</span> <b style="color:aqua">HERE <i class="fa-solid fa-user-plus"></i></b></div>
+        </div>
+        <div class="row p-0">
+            <div class="col-sm-10 mx-auto f py-5 px-5">
+                <div style="font-size: 30px; text-align: center;">Welcome to MaTe India
+                </div>
+                <p style="font-size: 17px;text-align: center;" class="mt-2">LogIn to your Online Training </p> 
+        
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="email" class="form-control pt1 mt-4" required name="ee"/>
+                    <input type="password" class="form-control pt1" required name="pp"/>
+                    <div class="btn1 mt-4 ">
+                    <input type="submit" value="LOGIN" class="btn btn2 form-control rounded rounded-4">
+                    </div><br/><br/>
+                    <hr/><br/>
+                    <div style="text-align: center;font-size: 18px;">Don't have an account? <a href="/user/signup/" style="text-decoration:none;color:aqua"><b>Sign Up</b></a></div>
+                </form>
+            </div>
+        </div>
+    </div>           
+</div> 
+<div class="row map">
+    
+</div>
+<div class="row p-5 gallery1">
+    <div class="col-sm-12 border border-3 gallery p-5">
+        <img src="{% static 'images/gallery1.jpg'%}" height="500px" width="100%" id="Imgb"><br/><br/>    
+        <img src="{% static 'images/gallery2.jpg'%}" height="100px" width="150px" onmouseleave="demo1(this)" onmouseover="demo(this)" class="Imgs ms-2">
+        <img src="{% static 'images/gallery3.jpg'%}" height="100px" width="150px" onmouseleave="demo1(this)" onmouseover="demo(this)" class="Imgs ms-2">
+        <img src="{% static 'images/gallery4.jpg'%}" height="100px" width="150px" onmouseleave="demo1(this)" onmouseover="demo(this)" class="Imgs ms-2">
+        <img src="{% static 'images/gallery5.jpg'%}" height="100px" width="150px" onmouseleave="demo1(this)" onmouseover="demo(this)" class="Imgs ms-2">
+        <img src="{% static 'images/gallery6.jpg'%}" height="100px" width="150px" onmouseleave="demo1(this)" onmouseover="demo(this)" class="Imgs ms-2">
+        <img src="{% static 'images/gallery7.jpg'%}" height="100px" width="150px" onmouseleave="demo1(this)" onmouseover="demo(this)" class="Imgs ms-2">
+        <img src="{% static 'images/gallery8.jfif'%}" height="100px" width="150px" onmouseleave="demo1(this)" onmouseover="demo(this)" class="Imgs ms-2">
+        <img src="{% static 'images/gallery1.jpg'%}" height="100px" width="150px" onmouseleave="demo1(this)" onmouseover="demo(this)" class="Imgs ms-2">    
+        <script>
+            let demo= (x) =>
+            {
+                document.querySelector("#Imgb").src=x.src
+                x.style.border="10px groove yellow"
+                x.style.transform="scale(1.1)"
+            }
+            let demo1= (y) =>
+            {
+                document.querySelector("#Imgb").src="{% static 'images/gallery1.jpg'%}"
+                y.style.border="10px groove yellowgreen"
+                y.style.transform="scale(1)"
+            }
+        </script>
+
+    </div>
+</div>               
+{% endblock %}

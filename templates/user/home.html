@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .box{
+        margin: 15% auto;
+    }
+    #menu1{}
+            #menu1 > ul{background:none;}
+            #menu1 ul{list-style: none;position: relative;float: left;margin: 0;padding: 0;}
+            #menu1 ul a{display: block;text-decoration: none;color: white;font-weight: 700;font-size: 15px;line-height: 32px;padding: 0px 15px;font-family: Arial, Helvetica, sans-serif;}
+            #menu1 ul li{position: relative;float: left;margin: 0;padding: 0;}
+            #menu1 ul li.active{background: #f20091;padding: 10px 21px;border-radius: 5px;}
+            #menu1 ul li:hover{}
+            #menu1 ul ul{display: none;position: absolute;top: 100%;left: 0;background-color: aqua;padding: 0;background: transparent;}
+            #menu1 ul ul li{float: none;width: 200px;border: 1.5px solid white;border-radius: 5px;}
+            #menu1 ul ul li:hover{background: black;border-radius: 5px;}
+            #menu1 ul ul a{line-height: 120%;padding: 10px 15px;}
+            #menu1 ul ul ul{top:5px;left: 100%;background: green;background: transparent;}
+            #menu1 ul li:hover > ul{display: block;}
+            .m{line-height: 40px;margin-left: 30px;text-align: center;}
+            
+            #menu1 ul .u{background: yellow;background: transparent;border: 1.5px solid white; box-sizing: border-box;padding: 8px 32px;border-radius: 5px;}
+            #menu1 ul .u:hover{background: gray;}
+</style>
+<div class="row box">
+    <div class="col-sm-4 mx-auto">
+        <nav id="menu1">
+            <ul>
+                <li class="active m me-3"><a href="" style="font-size: 22px;">As a Worker</a>
+                <ul style="border-radius: 5px; margin-left: 10px;">
+                    <li><a href="">For Home</a>
+                    <ul style="border-radius: 5px;">
+                        <li><a href="/user/plumber/">Plumber</a></li>
+                        <li><a href="">Electrician</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="">For Vehical</a>
+                    <ul style="border-radius: 5px;">
+                        <li><a href="">Bikes</a></li>
+                        <li><a href="">Auto</a></li>
+                        <li><a href="">cars</a></li>
+                        <li><a href="">Bus and Truck</a></li>
+                        <li><a href="">Tractor</a></li>
+
+
+                    </ul>
+                    </li>
+                <li><a href="">For Shops</a></li>
+
+                </ul>
+                </li>
+                <li class="m u"><a href="" style="font-size: 22px;">As a User</a>
+                    <ul style="border-radius: 5px;margin-top: 2px;margin-left: 10px;">
+                        <li><a href="/user/index/">For Home</a>
+                        <ul>
+                            <li><a href="/user/help/">Plumber</a></li>
+                            <li><a href="">Electrician</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="">For Vehical</a>
+                        <ul style="border-radius: 5px;">
+                            <li><a href="">Bikes</a></li>
+                            <li><a href="">Auto</a></li>
+                            <li><a href="">cars</a></li>
+                            <li><a href="">Bus and Truck</a></li>
+                            <li><a href="">Tractor</a></li>
+        
+        
+                        </ul>
+                        </li>
+                        <li><a href="">For Shops</a></li>
+        
+                        </ul>
+        
+                </li>
+
+            </ul>
+
+        </nav>
+    </div>  
+</div>
+{% endblock %}

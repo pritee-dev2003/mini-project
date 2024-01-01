@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+{% if request.session.userid %}
+<script>
+    alert("This is for only MATE partner !!!")
+    location.href="/user/index/"
+</script>
+{% else %}
+<script>
+    alert("You Are Login As A MATE Partner !!!!!")
+    location.href="/user/plumber/"
+</script>
+{% endif %}
+<h1>
+    WORKS
+</h1>
+{% endblock %}
